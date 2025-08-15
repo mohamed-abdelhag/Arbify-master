@@ -1,0 +1,152 @@
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-select/sass/bootstrap-select';
+@import '~filepond/dist/filepond.min.css';
+
+@import 'jetbrains-mono';
+@import 'parts/messages-index';
+
+.breadcrumb {
+    background: none;
+    padding: 0;
+}
+
+.bootstrap-select .dropdown-menu a {
+    &.active, &:active {
+        &:not([href]):hover {
+            color: #fff;
+        }
+    }
+}
+
+.bs-searchbox {
+    padding-bottom: 12px;
+}
+
+.bootstrap-select .no-results {
+    background: none;
+}
+
+.bootstrap-select > button {
+    @extend .form-control;
+}
+
+.country-flag {
+    height: 2rem;
+
+    &:not(:last-child) {
+        @extend .mr-2;
+    }
+}
+
+.country-flag-selectpicker {
+    height: 21px;
+    margin-right: 5px;
+    vertical-align: text-top;
+}
+
+.country-flag-selectpicker-placeholder {
+    display: inline-block;
+    width: 26px;
+}
+
+.text-super-muted {
+    color: #c3c7cb;
+
+    a {
+        color: #9fcbef;
+    }
+}
+
+.help-icon {
+    font-weight: bold;
+    border: 2px solid grey;
+    color: grey;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    font-size: 16px;
+    opacity: 0.7;
+    vertical-align: middle;
+    margin-bottom: 3px;
+    cursor: help;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly !important;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diff {
+    white-space: normal;
+
+    ins {
+        text-decoration: none;
+        background: lighten($success, 30%);
+    }
+
+    del {
+        text-decoration: none;
+        background: lighten($danger, 30%);
+    }
+}
+
+.project-card {
+    .card-body {
+        position: relative;
+        padding-top: 1.5rem;
+    }
+}
+
+.project-card-progress {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    border-radius: 3px 3px 0 0;
+    height: 0.25rem;
+}
+
+.flags-horizontal-list {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+
+    li {
+        //
+
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+    }
+
+    img {
+        @extend .country-flag;
+    }
+}
+
+.btn-xs-sm {
+    @media (max-width: #{map-get($grid-breakpoints, sm)}) {
+        // Hardcoded .btn-sm because we can't @extend inside media queries :(
+        padding: 0.25rem 0.5rem;
+        font-size: 0.7875rem;
+        line-height: 1.5;
+        border-radius: 0.2rem;
+    }
+}
+
+.align-items-center-sm-up {
+    @media (min-width: #{map-get($grid-breakpoints, sm)}) {
+        align-items: center;
+    }
+}

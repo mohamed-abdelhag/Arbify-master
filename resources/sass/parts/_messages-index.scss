@@ -1,0 +1,89 @@
+.messages-table {
+    table-layout: fixed;
+    width: initial;
+
+    thead th, tbody td {
+        vertical-align: middle;
+    }
+
+    thead th {
+        position: relative;
+        padding-top: calc(#{$table-cell-padding} + 5px);
+
+        .translation-progress-bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 5px;
+            background: $border-color;
+        }
+
+        .translation-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 5px;
+            max-width: 100%;
+        }
+    }
+
+    th code {
+        overflow-wrap: anywhere;
+        font-weight: 500;
+    }
+
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+
+    td:last-child {
+        .row {
+            margin-right: 0;
+        }
+
+        .col:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.messages-header-cell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-down(xs) {
+        flex-direction: column;
+
+        .messages-header-cell--wrapping {
+            margin-top: 0.5rem;
+        }
+    }
+}
+
+.message-type-col {
+    @extend .col-1;
+    flex: 0 0 52px;
+    max-width: 52px;
+}
+
+.message-field {
+    &.is-accepted {
+        border-color: $success;
+
+        &:focus {
+            border-color: $success;
+            box-shadow: 0 0 0 $input-focus-width rgba($success, .25);
+        }
+    }
+
+    &.is-modified {
+        border-color: $dark;
+
+        &:focus {
+            border-color: $dark;
+            box-shadow: 0 0 0 $input-focus-width rgba($dark, .25);
+        }
+    }
+}
