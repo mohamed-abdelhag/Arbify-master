@@ -1,0 +1,7 @@
+RewriteEngine On
+
+# Force everything to go through public/index.php
+RewriteRule ^$ public/ [L]
+RewriteRule (.*) public/$1 [L]
+
+
